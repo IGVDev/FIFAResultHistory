@@ -21,5 +21,5 @@ const Card = ({ hteam, ateam, id, team1, team2, hscore, ascore, winner }) => {
         </div>
     )
 }
-
+//test
 export default Card;
