@@ -55,6 +55,12 @@ class Standings extends Component {
             right: true,
          },
          {
+            name:'%',
+            selector: 'winpercent',
+            sortable: true,
+            right: true,
+         },
+         {
             name: 'GF',
             selector: 'goalsFor',    
             sortable: true,

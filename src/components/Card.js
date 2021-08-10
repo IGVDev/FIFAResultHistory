@@ -7,9 +7,9 @@ const Card = ({ hteam, ateam, id, team1, team2, hscore, ascore, winner }) => {
             <div className='flex items-center'>
                 <img alt='team1' src={`https://robohash.org/${id}?size=50x50`} />
                 <div>
-                    <h2>{hscore}</h2>
-                    <p>{team1}</p>
-                    <p>{hteam}</p>
+                    <h2>{hscore} - </h2>
+                    <p>{team1} - </p>
+                    <p>{hteam} - </p>
                 </div>
                 <div>
                     <h2>{ascore}</h2>

@@ -39,7 +39,16 @@ class MatchCard extends React.Component {
             })
         })
         .catch(err => console.log('oops'));
-        this.setState({needConfirm: false});
+        this.state = {
+            hteam: '',
+            ateam: '',
+            team1: '',
+            team2: '',
+            hscore: 0,
+            ascore: 0,
+            winner: '',
+            needConfirm: false,
+        }
         alert('Match loaded to database');
         }    
     }
