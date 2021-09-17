@@ -1,6 +1,6 @@
-FIFA Result History
+# FIFA Result History
 
-This is a WebApp that aims to keep logs of matches played between friends on FIFA, or PES, or whichever is the hip soccer videogame that kids play whenever you read this.
+This is a SPA that aims to keep logs of matches played between friends on FIFA, or PES, or whichever is the hip soccer videogame that the cool kids play whenever you are reading this.
 
 The inspiration for this app is the "community" system that older PES games used, where games played locally would have their stats saved to a database so you could see when, and how much you beat your friends, for the sole purpose of bragging rights.
 Nowadays, FIFA does not offer a similar system (or maybe they do, but not to the extent I'd like it to be).
@@ -17,4 +17,5 @@ Planned features are:
 - Tournament logs
 - Possibly even MORE features!
 
-For now, the aim is to be able to use this with my group of friends, but as soon as it reaches V1.0 (which will have features up to Seasons) the plan will be to release it as an actual app, possibly branching out to Android development (sorry iOS users! you'll have to use the webapp).
+For now, this is a personal project, meaning I don't mean for the users of this to be anyone other than my own group of friends. 
+Also to show off.
