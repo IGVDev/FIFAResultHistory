@@ -1,9 +1,16 @@
 import React from "react";
 
-const Navigation = ({ onRouteChange, isSignedIn }) => {
+const Navigation = ({
+  onRouteChange,
+  isSignedIn,
+  loginWithPopup,
+  logout,
+  username,
+}) => {
   if (isSignedIn) {
     return (
       <nav style={{ display: "flex", justifyContent: "flex-end" }}>
+        <p className="f3 white pa3 absolute left-0">Hello {username}</p>
         <p
           onClick={() => onRouteChange("home")}
           className="f3 link dim white underline pa3 pointer"
@@ -23,7 +30,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           Load Match
         </p>
         <p
-          onClick={() => onRouteChange("signout")}
+          onClick={() => logout()}
           className="f3 link dim white underline pa3 pointer"
         >
           Sign Out
@@ -40,16 +47,10 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           Home
         </p>
         <p
-          onClick={() => onRouteChange("signin")}
+          onClick={() => loginWithPopup()}
           className="f3 link dim white underline pa3 pointer"
         >
           Sign In
-        </p>
-        <p
-          onClick={() => onRouteChange("register")}
-          className="f3 link dim white underline pa3 pointer"
-        >
-          Register
         </p>
       </nav>
     );
