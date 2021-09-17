@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CardList from "./components/CardList";
 import MatchCard from "./components/MatchCard";
 import Navigation from "./components/Navigation";
@@ -8,94 +8,84 @@ import SignIn from "./components/SignIn";
 import Standings from "./components/Standings";
 import "./App.css";
 import "tachyons";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const initState = {
   matches: [],
   route: "home",
-  isSignedIn: false,
+  isSignedIn: true,
   user: {
-    id: "",
-    name: "",
-    email: "",
+    id: "4",
+    name: "guido",
+    email: "joaco@gmail.com",
   },
 };
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      matches: [],
-      isSignedIn: true,
-      route: "home",
-      user: {
-        id: "4",
-        name: "guido",
-        email: "joaco@gmail.com",
-      },
-    };
-  }
+const App = () => {
+  const { loginWithPopup, logout, isAuthenticated, user } = useAuth0();
+  const [state, setState] = useState({
+    matches: [],
+    route: "home",
+    isSignedIn: isAuthenticated,
+    user: {
+      name: "Guest",
+      email: "",
+    },
+  });
 
-  loadUser = (data) => {
-    this.setState({
-      user: {
-        id: data.id,
-        name: data.name,
-        email: data.email,
-      },
-    });
-  };
-
-  componentDidMount() {
-    this.setState({});
-  }
-
-  onRouteChange = (route) => {
-    if (route === "signout") {
-      this.setState(initState);
-    } else if (route === "home") {
-      this.setState({ isSignedIn: true });
+  const loadUser = (data) => {
+    if (data) {
+      setState({
+        ...state,
+        isSignedIn: isAuthenticated,
+        user: {
+          name: data.given_name,
+          email: data.email,
+        },
+      });
     }
-    this.setState({ route: route });
   };
 
-  render() {
-    const { route } = this.state;
-    return (
-      <div className="App white">
-        <Navigation
-          isSignedIn={this.state.isSignedIn}
-          onRouteChange={this.onRouteChange}
-        />
-        <div className="flex justify-around">
-          {
-            {
-              home: (
-                <div>
-                  <h1>Hello, {this.state.user.name}</h1>
-                  <CardList matches={this.state.matches} />
-                  <Standings />
-                </div>
-              ),
-              load: <MatchCard />,
-              signin: (
-                <SignIn
-                  loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}
-                />
-              ),
-              register: (
-                <Register
-                  loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}
-                />
-              ),
-              profile: <Profile user={this.state.user} />,
-            }[route]
-          }
-        </div>
-      </div>
-    );
+  useEffect(() => {
+    loadUser(user);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  const onRouteChange = (route) => {
+    if (route === "signout") {
+      setState(initState);
+    } else if (route === "home") {
+      setState({ ...state, isSignedIn: true });
+    }
+    setState({ ...state, route: route });
+  };
+
+  let route = state.route;
+  let component;
+  switch (route) {
+    case "home":
+      component = <Standings />;
+      break;
+    case "load":
+      component = <MatchCard />;
+      break;
+    default: {
+    }
   }
-}
+
+  return (
+    <div className="App white">
+      <Navigation
+        isSignedIn={state.isSignedIn}
+        onRouteChange={onRouteChange}
+        loginWithPopup={loginWithPopup}
+        logout={logout}
+        loadUser={loadUser}
+        username={state.user.name}
+      />
+      <div className="flex justify-around">{component}</div>
+    </div>
+  );
+};
 
 export default App;
