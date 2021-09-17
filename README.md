@@ -1,4 +1,4 @@
-FIFA Result History
+# FIFA Result History
 
 This is a WebApp that aims to keep logs of matches played between friends on FIFA, or PES, or whichever is the hip soccer videogame that kids play whenever you read this.
 
