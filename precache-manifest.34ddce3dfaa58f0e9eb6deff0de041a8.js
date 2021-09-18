@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d9e0e6e7de39c39083fdadea99f7b52",
+    "revision": "2bff53a3d6888c317df258b006594e94",
     "url": "/FIFAResultHistory/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FIFAResultHistory/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "ecb52fdb5111a0c6a11d",
+    "revision": "c51e8a1f5b0771c726e4",
     "url": "/FIFAResultHistory/static/css/main.0cfc94fe.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ecb52fdb5111a0c6a11d",
-    "url": "/FIFAResultHistory/static/js/main.828caa2f.chunk.js"
+    "revision": "c51e8a1f5b0771c726e4",
+    "url": "/FIFAResultHistory/static/js/main.56cce244.chunk.js"
   },
   {
     "revision": "21c5ed29a152acc3bce1",
