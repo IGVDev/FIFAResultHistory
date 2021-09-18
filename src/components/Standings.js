@@ -7,7 +7,7 @@ const Standings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/standings")
+      .get("https://peaceful-wildwood-69585.herokuapp.com/standings")
       .then((matches) => setData({ data: matches.data }));
   }, []);
 

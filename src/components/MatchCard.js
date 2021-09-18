@@ -25,7 +25,7 @@ class MatchCard extends React.Component {
     const { hteam, ateam, team1, team2, hscore, ascore, winner } = this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
-      fetch("http://localhost:3001/matchload", {
+      fetch("https://peaceful-wildwood-69585.herokuapp.com/3001/matchload", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

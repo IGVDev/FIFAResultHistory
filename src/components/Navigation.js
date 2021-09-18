@@ -17,12 +17,12 @@ const Navigation = ({
         >
           Home
         </p>
-        <p
+        {/* <p
           onClick={() => onRouteChange("profile")}
           className="f3 link dim white underline pa3 pointer"
         >
           Profile
-        </p>
+        </p> */}
         <p
           onClick={() => onRouteChange("load")}
           className="f3 link dim white underline pa3 pointer"
@@ -30,7 +30,7 @@ const Navigation = ({
           Load Match
         </p>
         <p
-          onClick={() => logout()}
+          onClick={() => logout({ returnTo: window.location.origin })}
           className="f3 link dim white underline pa3 pointer"
         >
           Sign Out

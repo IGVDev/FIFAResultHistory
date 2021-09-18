@@ -13,11 +13,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 const initState = {
   matches: [],
   route: "home",
-  isSignedIn: true,
+  isSignedIn: false,
   user: {
-    id: "4",
-    name: "guido",
-    email: "joaco@gmail.com",
+    name: "Guest",
+    email: "",
   },
 };
 
