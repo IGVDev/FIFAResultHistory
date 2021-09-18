@@ -23,10 +23,7 @@ const Navigation = ({
         >
           Profile
         </p> */}
-        <p
-          onClick={() => onRouteChange("load")}
-          className="f3 link dim white underline pa3 pointer"
-        >
+        <p onClick={null} className="f3 dark-gray underline pa3">
           Load Match
         </p>
         <p
