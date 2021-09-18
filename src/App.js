@@ -65,9 +65,9 @@ const App = () => {
     case "home":
       component = <Standings />;
       break;
-    case "load":
-      component = <MatchCard />;
-      break;
+    // case "load":
+    //   component = <MatchCard />;
+    //   break;
     default: {
     }
   }
