@@ -82,7 +82,7 @@ const App = () => {
         loadUser={loadUser}
         username={state.user.name}
       />
-      <div className="flex justify-around">{component}</div>
+      <div className="flex">{component}</div>
     </div>
   );
 };

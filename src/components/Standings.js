@@ -3,14 +3,14 @@ import DataTable from "react-data-table-component";
 import axios from "axios";
 
 const Standings = () => {
-  const [data, setData] = useState({ data: [] });
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://peaceful-wildwood-69585.herokuapp.com/standings")
-      .then((matches) => setData({ data: matches.data }));
+      .then((data) => setData(data));
+    // eslint-disable-next-line
   }, []);
-
   const columns = [
     {
       name: "Name",
@@ -72,12 +72,11 @@ const Standings = () => {
       right: true,
     },
   ];
-  const matches = data;
   return (
     <DataTable
       title="Standings"
       columns={columns}
-      data={matches}
+      data={data.data}
       theme="dark"
     />
   );
