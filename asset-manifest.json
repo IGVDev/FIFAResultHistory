@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FIFAResultHistory/static/css/main.0cfc94fe.chunk.css",
-    "main.js": "/FIFAResultHistory/static/js/main.254572da.chunk.js",
-    "main.js.map": "/FIFAResultHistory/static/js/main.254572da.chunk.js.map",
+    "main.js": "/FIFAResultHistory/static/js/main.5821ec5e.chunk.js",
+    "main.js.map": "/FIFAResultHistory/static/js/main.5821ec5e.chunk.js.map",
     "runtime-main.js": "/FIFAResultHistory/static/js/runtime-main.b2b01345.js",
     "runtime-main.js.map": "/FIFAResultHistory/static/js/runtime-main.b2b01345.js.map",
     "static/css/2.3c03f26f.chunk.css": "/FIFAResultHistory/static/css/2.3c03f26f.chunk.css",
     "static/js/2.8d203ab3.chunk.js": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js",
     "static/js/2.8d203ab3.chunk.js.map": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js.map",
     "index.html": "/FIFAResultHistory/index.html",
-    "precache-manifest.56d8fb876e79a65391ddb4787430b7b9.js": "/FIFAResultHistory/precache-manifest.56d8fb876e79a65391ddb4787430b7b9.js",
+    "precache-manifest.3fb7a2a2db715a74a425d88af0ebc640.js": "/FIFAResultHistory/precache-manifest.3fb7a2a2db715a74a425d88af0ebc640.js",
     "service-worker.js": "/FIFAResultHistory/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/FIFAResultHistory/static/css/2.3c03f26f.chunk.css.map",
     "static/css/main.0cfc94fe.chunk.css.map": "/FIFAResultHistory/static/css/main.0cfc94fe.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.3c03f26f.chunk.css",
     "static/js/2.8d203ab3.chunk.js",
     "static/css/main.0cfc94fe.chunk.css",
-    "static/js/main.254572da.chunk.js"
+    "static/js/main.5821ec5e.chunk.js"
   ]
 }
