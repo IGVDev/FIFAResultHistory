@@ -80,7 +80,7 @@ const App = () => {
         loginWithPopup={loginWithPopup}
         logout={logout}
         loadUser={loadUser}
-        username={state.user.name}
+        user={state.user}
       />
       <div className="flex">{component}</div>
     </div>
