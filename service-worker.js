@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/FIFAResultHistory/precache-manifest.6337abe13eb8fd6e87196b077fc15466.js"
+  "/FIFAResultHistory/precache-manifest.56d8fb876e79a65391ddb4787430b7b9.js"
 );
 
 self.addEventListener('message', (event) => {
