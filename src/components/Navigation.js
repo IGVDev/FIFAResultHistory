@@ -54,7 +54,9 @@ const Navigation = ({
       {button}
       {isSignedIn ? (
         <p
-          onClick={() => logout({ returnTo: window.location.origin })}
+          onClick={() =>
+            logout({ returnTo: "https://igvdev.github.io/FIFAResultHistory/" })
+          }
           className="f3 link dim white underline pa3 pointer"
         >
           Sign Out
