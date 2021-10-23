@@ -126,6 +126,9 @@ class MatchCard extends React.Component {
                   {value}
                 </option>
               ))}
+              <option key="1" value="null" defaultValue>
+                {" "}
+              </option>
             </select>
             <p>Team</p>
             <input
@@ -148,12 +151,15 @@ class MatchCard extends React.Component {
               id="ateam"
               onChange={this.onOptionChange}
             ></input>
-            <select type="text" id="hteam" onChange={this.onOptionChange}>
+            <select type="text" id="ateam" onChange={this.onOptionChange}>
               {this.state.users.map((value) => (
                 <option key={value} value={value}>
                   {value}
                 </option>
               ))}
+              <option key="1" value="null" defaultValue>
+                {" "}
+              </option>
             </select>
             <p>Team</p>
             <input
