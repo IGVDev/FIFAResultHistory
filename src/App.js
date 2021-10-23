@@ -15,7 +15,7 @@ const salt = bcrypt.genSaltSync(10);
 const initState = {
   matches: [],
   route: "home",
-  isSignedIn: true,
+  isSignedIn: false,
   user: {
     name: "Guest",
     email: "",
@@ -28,7 +28,7 @@ const App = () => {
   const [state, setState] = useState(initState);
   const [isOpen, setIsOpen] = useState(false);
   const [pw, setpw] = useState("");
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const loadUser = (data) => {
     if (data) {
@@ -59,11 +59,11 @@ const App = () => {
 
   const onCloseModal = () => setIsOpen(false);
 
-  const fetchLeagues = async () => {
-    await fetch("https://peaceful-wildwood-69585.herokuapp.com/leagues")
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-  };
+  // const fetchLeagues = async () => {
+  //   await fetch("https://peaceful-wildwood-69585.herokuapp.com/leagues")
+  //     .then((data) => console.log(data))
+  //     .catch((err) => console.log(err));
+  // };
 
   const submitPassword = async () => {
     const hashPassword = bcrypt.hashSync(pw, salt);
@@ -76,7 +76,6 @@ const App = () => {
     })
       .then((data) => {
         if (data.status === 200) setIsAdmin(true);
-        console.log(isAdmin);
         setIsOpen(false);
       })
       .catch((err) => console.log(err));
