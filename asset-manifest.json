@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/FIFAResultHistory/static/css/main.0cfc94fe.chunk.css",
-    "main.js": "/FIFAResultHistory/static/js/main.254572da.chunk.js",
-    "main.js.map": "/FIFAResultHistory/static/js/main.254572da.chunk.js.map",
-    "runtime-main.js": "/FIFAResultHistory/static/js/runtime-main.b2b01345.js",
-    "runtime-main.js.map": "/FIFAResultHistory/static/js/runtime-main.b2b01345.js.map",
-    "static/css/2.3c03f26f.chunk.css": "/FIFAResultHistory/static/css/2.3c03f26f.chunk.css",
-    "static/js/2.8d203ab3.chunk.js": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js",
-    "static/js/2.8d203ab3.chunk.js.map": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js.map",
+    "main.css": "/FIFAResultHistory/static/css/main.125f824b.chunk.css",
+    "main.js": "/FIFAResultHistory/static/js/main.7c805284.chunk.js",
+    "main.js.map": "/FIFAResultHistory/static/js/main.7c805284.chunk.js.map",
+    "runtime-main.js": "/FIFAResultHistory/static/js/runtime-main.6d1d81ab.js",
+    "runtime-main.js.map": "/FIFAResultHistory/static/js/runtime-main.6d1d81ab.js.map",
+    "static/css/2.9cca96cc.chunk.css": "/FIFAResultHistory/static/css/2.9cca96cc.chunk.css",
+    "static/js/2.7b8e4b2e.chunk.js": "/FIFAResultHistory/static/js/2.7b8e4b2e.chunk.js",
+    "static/js/2.7b8e4b2e.chunk.js.map": "/FIFAResultHistory/static/js/2.7b8e4b2e.chunk.js.map",
     "index.html": "/FIFAResultHistory/index.html",
-    "precache-manifest.56d8fb876e79a65391ddb4787430b7b9.js": "/FIFAResultHistory/precache-manifest.56d8fb876e79a65391ddb4787430b7b9.js",
-    "service-worker.js": "/FIFAResultHistory/service-worker.js",
-    "static/css/2.3c03f26f.chunk.css.map": "/FIFAResultHistory/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.0cfc94fe.chunk.css.map": "/FIFAResultHistory/static/css/main.0cfc94fe.chunk.css.map",
-    "static/js/2.8d203ab3.chunk.js.LICENSE.txt": "/FIFAResultHistory/static/js/2.8d203ab3.chunk.js.LICENSE.txt"
+    "static/css/2.9cca96cc.chunk.css.map": "/FIFAResultHistory/static/css/2.9cca96cc.chunk.css.map",
+    "static/css/main.125f824b.chunk.css.map": "/FIFAResultHistory/static/css/main.125f824b.chunk.css.map",
+    "static/js/2.7b8e4b2e.chunk.js.LICENSE.txt": "/FIFAResultHistory/static/js/2.7b8e4b2e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b2b01345.js",
-    "static/css/2.3c03f26f.chunk.css",
-    "static/js/2.8d203ab3.chunk.js",
-    "static/css/main.0cfc94fe.chunk.css",
-    "static/js/main.254572da.chunk.js"
+    "static/js/runtime-main.6d1d81ab.js",
+    "static/css/2.9cca96cc.chunk.css",
+    "static/js/2.7b8e4b2e.chunk.js",
+    "static/css/main.125f824b.chunk.css",
+    "static/js/main.7c805284.chunk.js"
   ]
 }
