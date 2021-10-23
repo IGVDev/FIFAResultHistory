@@ -52,12 +52,14 @@ const Navigation = ({
           Profile
         </p> */}
       {button}
-      <p
-        onClick={() => logout({ returnTo: window.location.origin })}
-        className="f3 link dim white underline pa3 pointer"
-      >
-        Sign Out
-      </p>
+      {isSignedIn ? (
+        <p
+          onClick={() => logout({ returnTo: window.location.origin })}
+          className="f3 link dim white underline pa3 pointer"
+        >
+          Sign Out
+        </p>
+      ) : null}
     </nav>
   );
 };
