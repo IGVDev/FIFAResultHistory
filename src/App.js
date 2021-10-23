@@ -49,11 +49,11 @@ const App = () => {
   }, [user]);
 
   const onRouteChange = (route) => {
-    if (route === "signout") {
-      setState(initState);
-    } else if (route === "home") {
-      setState({ ...state, isSignedIn: true });
-    }
+    // if (route === "signout") {
+    //   setState(initState);
+    // } else if (route === "home") {
+    //   setState({ ...state, isSignedIn: true });
+    // }
     setState({ ...state, route: route });
   };
 
