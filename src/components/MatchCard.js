@@ -5,6 +5,9 @@ class MatchCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      database: "",
+      leagueOptions: ["matches", "MMP-Dobles", "MMP-Futboltenis"],
+      users: [],
       hteam: "",
       ateam: "",
       team1: "",
@@ -16,7 +19,48 @@ class MatchCard extends React.Component {
     };
   }
 
+  componentDidMount = async () => {
+    await fetch("https://peaceful-wildwood-69585.herokuapp.com/loadusers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        database: "matches",
+      }),
+    })
+      .then((data) => data.json())
+      .then((array) => {
+        if (Array.isArray(array)) {
+          this.setState({ users: array });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  onDatabaseChange = async (event) => {
+    await fetch("https://peaceful-wildwood-69585.herokuapp.com/loadusers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        database: event.target.value,
+      }),
+    })
+      .then((data) => data.json())
+      .then((array) => {
+        if (Array.isArray(array)) {
+          this.setState({ users: array });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   onOptionChange = (event) => {
+    if (event.target.id === "database") {
+      this.onDatabaseChange(event);
+    }
     this.setState({ [event.target.id]: event.target.value });
     this.setState({ needConfirm: false });
   };
@@ -25,7 +69,7 @@ class MatchCard extends React.Component {
     const { hteam, ateam, team1, team2, hscore, ascore, winner } = this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
-      fetch("https://peaceful-wildwood-69585.herokuapp.com/3001/matchload", {
+      fetch("https://peaceful-wildwood-69585.herokuapp.com/matchload", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -59,16 +103,30 @@ class MatchCard extends React.Component {
 
   render() {
     return (
-      <article className="br3 white pa3 ma2 bw1 ba shadow-5 dt dt--fixed w-auto fl">
+      <article className="br3 white pa3 ma2 bw1 ba shadow-5 dt dt--fixed w-auto fl center">
         <h1>Load Match</h1>
+        <select id="database" onChange={this.onOptionChange}>
+          {this.state.leagueOptions.map((value) => (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          ))}
+        </select>
         <main className="b flex pa2">
           <div>
             <p>Player Name</p>
             <input
               type="text"
-              id="hteam"
+              id="ateam"
               onChange={this.onOptionChange}
             ></input>
+            <select type="text" id="hteam" onChange={this.onOptionChange}>
+              {this.state.users.map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
             <p>Team</p>
             <input
               type="text"
@@ -90,6 +148,13 @@ class MatchCard extends React.Component {
               id="ateam"
               onChange={this.onOptionChange}
             ></input>
+            <select type="text" id="hteam" onChange={this.onOptionChange}>
+              {this.state.users.map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
             <p>Team</p>
             <input
               type="text"
