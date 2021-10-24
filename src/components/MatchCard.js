@@ -6,7 +6,7 @@ class MatchCard extends React.Component {
     super(props);
     this.state = {
       database: "",
-      leagueOptions: ["matches", "mmpdobles", "mmpfutboltenis"],
+      leagueOptions: ["matches", "mmpdobles", "mmpfutboltenis", "mmp2021"],
       users: [],
       hteam: "",
       ateam: "",
