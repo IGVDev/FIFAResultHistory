@@ -5,6 +5,7 @@ import MatchCard from "./components/MatchCard";
 import Navigation from "./components/Navigation";
 import Standings from "./components/Standings";
 import { Modal } from "react-responsive-modal";
+import { WaveLoading } from "react-loadingg";
 // import Profile from "./components/Profile";
 import "tachyons";
 import "./App.css";
@@ -15,7 +16,7 @@ const salt = bcrypt.genSaltSync(10);
 const initState = {
   matches: [],
   route: "home",
-  isSignedIn: false,
+  isSignedIn: true,
   user: {
     name: "Guest",
     email: "",
@@ -25,6 +26,7 @@ const initState = {
 const App = () => {
   const { loginWithPopup, logout, isAuthenticated, user } = useAuth0();
 
+  const [isLoading, setIsLoading] = useState(false);
   const [state, setState] = useState(initState);
   const [isOpen, setIsOpen] = useState(false);
   const [pw, setpw] = useState("");
@@ -59,6 +61,12 @@ const App = () => {
 
   const onCloseModal = () => setIsOpen(false);
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      submitPassword();
+    }
+  };
+
   // const fetchLeagues = async () => {
   //   await fetch("https://peaceful-wildwood-69585.herokuapp.com/leagues")
   //     .then((data) => console.log(data))
@@ -66,6 +74,7 @@ const App = () => {
   // };
 
   const submitPassword = async () => {
+    setIsLoading(true);
     const hashPassword = bcrypt.hashSync(pw, salt);
     await fetch("https://peaceful-wildwood-69585.herokuapp.com/admin", {
       method: "POST",
@@ -75,8 +84,11 @@ const App = () => {
       body: JSON.stringify({ id: state.user.email, password: hashPassword }),
     })
       .then((data) => {
-        if (data.status === 200) setIsAdmin(true);
-        setIsOpen(false);
+        if (data.status === 200) {
+          setIsAdmin(true);
+          setIsOpen(false);
+        }
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   };
@@ -108,12 +120,21 @@ const App = () => {
       />
       <div className="flex">
         <Modal open={isOpen} onClose={onCloseModal} center>
-          <h2>Password:</h2>
-          <input
-            type="password"
-            onChange={(event) => setpw(event.target.value)}
-          />
-          <button onClick={submitPassword}>Login</button>
+          {isLoading ? (
+            <div style={{ padding: 100 }}>
+              <WaveLoading size="large" />
+            </div>
+          ) : (
+            <div>
+              <h2>Password:</h2>
+              <input
+                type="password"
+                onChange={(event) => setpw(event.target.value)}
+                onKeyPress={handleKeyPress}
+              />
+              <button onClick={submitPassword}>Login</button>
+            </div>
+          )}
         </Modal>
         {component}
       </div>
