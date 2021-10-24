@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
+import { WaveLoading } from "react-loadingg";
+
 // import axios from "axios";
 
 const Standings = () => {
   const [data, setData] = useState([]);
-  const [database, setDatabase] = useState("matches");
-  const databaseOptions = ["matches", "mmpdobles", "mmpfutboltenis"];
+  const [isLoading, setIsLoading] = useState(false);
+  const [database, setDatabase] = useState("");
+  const databaseOptions = ["matches", "mmpdobles", "mmpfutboltenis", "mmp2021"];
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://peaceful-wildwood-69585.herokuapp.com/standings", {
       method: "POST",
       headers: {
@@ -16,9 +20,12 @@ const Standings = () => {
       body: JSON.stringify({ database: database }),
     })
       .then((data) => data.json())
-      .then((data) => setData(data))
+      .then((data) => {
+        setData(data);
+        setIsLoading(false);
+      })
       .catch((err) => console.log(err));
-    // eslint-disable-next-line
+    // setIsLoading(false);
   }, [database]);
 
   const columns = [
@@ -82,28 +89,45 @@ const Standings = () => {
       right: true,
     },
   ];
-  console.log(data);
   return (
     <>
-      <div style={{ flex: 1 }}>
-        <div>
-          <select
-            id="database"
-            onChange={(event) => setDatabase(event.target.value)}
-          >
-            {databaseOptions.map((value) => (
-              <option key={value} value={value}>
-                {value}
-              </option>
-            ))}
-          </select>
-        </div>
-        <DataTable
-          title="Standings"
-          columns={columns}
-          data={data}
-          theme="dark"
-        />
+      <div
+        style={{
+          flex: 1,
+          height: window.innerHeight - 200,
+          // width: window.innerWidth - 50,
+        }}
+      >
+        <select
+          id="database"
+          onChange={(event) => setDatabase(event.target.value)}
+        >
+          <option value="" disabled selected hidden>
+            Select Database
+          </option>
+          {databaseOptions.map((value) => (
+            <option key={value} value={value}>
+              {value}
+            </option>
+          ))}
+        </select>
+        {database === "" ? (
+          <h1>(•_•)</h1>
+        ) : (
+          <DataTable
+            progressPending={isLoading}
+            progressComponent={
+              <div style={{ padding: 100 }}>
+                <WaveLoading size="large" />
+              </div>
+            }
+            title="Standings"
+            columns={columns}
+            data={data}
+            theme="dark"
+            responsive
+          />
+        )}
       </div>
     </>
   );
