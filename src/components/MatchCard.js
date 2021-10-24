@@ -117,7 +117,7 @@ class MatchCard extends React.Component {
             <p>Player Name</p>
             <input
               type="text"
-              id="ateam"
+              id="hteam"
               onChange={this.onOptionChange}
             ></input>
             <select type="text" id="hteam" onChange={this.onOptionChange}>
