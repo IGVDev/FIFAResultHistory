@@ -66,7 +66,8 @@ class MatchCard extends React.Component {
   };
 
   onSubmitResult = () => {
-    const { hteam, ateam, team1, team2, hscore, ascore, winner } = this.state;
+    const { hteam, ateam, team1, team2, hscore, ascore, winner, database } =
+      this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
       fetch("https://peaceful-wildwood-69585.herokuapp.com/matchload", {
@@ -80,6 +81,7 @@ class MatchCard extends React.Component {
           hscore: hscore,
           ascore: ascore,
           winner: winner,
+          database: database,
         }),
       }).catch((err) => console.log("oops"));
       this.setState = {
