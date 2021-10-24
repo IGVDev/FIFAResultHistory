@@ -16,7 +16,7 @@ const salt = bcrypt.genSaltSync(10);
 const initState = {
   matches: [],
   route: "home",
-  isSignedIn: true,
+  isSignedIn: false,
   user: {
     name: "Guest",
     email: "",
