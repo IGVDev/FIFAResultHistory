@@ -8,17 +8,17 @@ const Standings = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [database, setDatabase] = useState("");
-  const databaseOptions = ["matches", "mmpdobles", "mmpfutboltenis", "mmp2021"];
+  const databaseOptions = [
+    "test",
+    "mmp",
+    "mmpdobles",
+    "mmpfutboltenis",
+    "mmp2021",
+  ];
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://peaceful-wildwood-69585.herokuapp.com/standings", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ database: database }),
-    })
+    fetch(`https://matchhistoryapi.herokuapp.com/getStandings/${database}`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);

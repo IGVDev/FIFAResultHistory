@@ -5,8 +5,8 @@ class MatchCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      database: "",
-      leagueOptions: ["matches", "mmpdobles", "mmpfutboltenis", "mmp2021"],
+      database: "test",
+      leagueOptions: ["test", "mmpdobles", "mmpfutboltenis", "mmp2021"],
       users: [],
       hteam: "",
       ateam: "",
@@ -20,15 +20,7 @@ class MatchCard extends React.Component {
   }
 
   componentDidMount = async () => {
-    await fetch("https://peaceful-wildwood-69585.herokuapp.com/loadusers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        database: "matches",
-      }),
-    })
+    await fetch(`https://matchhistoryapi.herokuapp.com/getUsers/test`)
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -39,15 +31,9 @@ class MatchCard extends React.Component {
   };
 
   onDatabaseChange = async (event) => {
-    await fetch("https://peaceful-wildwood-69585.herokuapp.com/loadusers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        database: event.target.value,
-      }),
-    })
+    await fetch(
+      `https://matchhistoryapi.herokuapp.com/getUsers/${event.target.value}`
+    )
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -70,18 +56,18 @@ class MatchCard extends React.Component {
       this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
-      fetch("https://peaceful-wildwood-69585.herokuapp.com/matchload", {
+      fetch("https://matchhistoryapi.herokuapp.com/createMatch", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          hteam: hteam,
-          ateam: ateam,
+          user1: hteam,
+          user2: ateam,
           team1: team1,
           team2: team2,
-          hscore: hscore,
-          ascore: ascore,
+          result1: hscore,
+          result2: ascore,
           winner: winner,
-          database: database,
+          league: database,
         }),
       }).catch((err) => console.log("oops"));
       this.setState = {
