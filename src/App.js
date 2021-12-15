@@ -10,6 +10,7 @@ import { WaveLoading } from "react-loadingg";
 import "tachyons";
 import "./App.css";
 import "react-responsive-modal/styles.css";
+import MatchView from "./containers/Profile";
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -101,6 +102,9 @@ const App = () => {
       break;
     case "load":
       component = <MatchCard />;
+      break;
+    case "profile":
+      component = <MatchView />;
       break;
     default: {
     }

@@ -45,12 +45,14 @@ const Navigation = ({
       >
         Home
       </p>
-      {/* <p
+      {isSignedIn ? (
+        <p
           onClick={() => onRouteChange("profile")}
           className="f3 link dim white underline pa3 pointer"
         >
           Profile
-        </p> */}
+        </p>
+      ) : null}
       {button}
       {isSignedIn ? (
         <p

@@ -8,13 +8,7 @@ const Standings = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [database, setDatabase] = useState("");
-  const databaseOptions = [
-    "test",
-    "mmp",
-    "mmpdobles",
-    "mmpfutboltenis",
-    "mmp2021",
-  ];
+  const databaseOptions = ["test", "mmpdobles", "mmpfutboltenis", "mmp2021"];
 
   useEffect(() => {
     setIsLoading(true);
@@ -69,33 +63,38 @@ const Standings = () => {
       selector: "winpercent",
       sortable: true,
       right: true,
+      hide: "md",
     },
     {
       name: "GF",
       selector: "goalsFor",
       sortable: true,
       right: true,
+      hide: "sm",
     },
     {
       name: "GA",
       selector: "goalsAgainst",
       sortable: true,
       right: true,
+      hide: "sm",
     },
     {
       name: "GD",
       selector: "goalDif",
       sortable: true,
       right: true,
+      hide: "sm",
     },
   ];
+
   return (
     <>
       <div
         style={{
           flex: 1,
           height: window.innerHeight - 200,
-          // width: window.innerWidth - 50,
+          padding: 10,
         }}
       >
         <select
