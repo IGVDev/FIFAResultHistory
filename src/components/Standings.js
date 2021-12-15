@@ -19,7 +19,6 @@ const Standings = () => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
-    // setIsLoading(false);
   }, [database]);
 
   const columns = [

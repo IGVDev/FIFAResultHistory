@@ -7,7 +7,7 @@ const Navigation = ({
   isSignedIn,
   loginWithPopup,
   logout,
-  user,
+  name,
 }) => {
   let button;
   if (isAdmin) {
@@ -21,7 +21,10 @@ const Navigation = ({
     );
   } else if (isSignedIn) {
     button = (
-      <p onClick={setIsOpen} className="f3 link dim white underline pa3">
+      <p
+        onClick={() => setIsOpen(true)}
+        className="f3 link dim white underline pa3"
+      >
         Admin
       </p>
     );
@@ -38,21 +41,28 @@ const Navigation = ({
 
   return (
     <nav style={{ display: "flex", justifyContent: "flex-end" }}>
-      <p className="f3 white pa3 absolute left-0">Hello {user.name}</p>
-      <p
-        onClick={() => onRouteChange("home")}
-        className="f3 link dim white underline pa3 pointer"
-      >
-        Home
-      </p>
+      <p className="f3 white pa3 absolute left-0">Hello {name}</p>
       {isSignedIn ? (
         <p
           onClick={() => onRouteChange("profile")}
           className="f3 link dim white underline pa3 pointer"
         >
-          Profile
+          Home
         </p>
-      ) : null}
+      ) : (
+        <p
+          onClick={() => onRouteChange("home")}
+          className="f3 link dim white underline pa3 pointer"
+        >
+          Home
+        </p>
+      )}
+      <p
+        onClick={() => onRouteChange("standings")}
+        className="f3 link dim white underline pa3 pointer"
+      >
+        Standings
+      </p>
       {button}
       {isSignedIn ? (
         <p

@@ -1,7 +1,7 @@
 import React from "react";
 import whoWon from "./Match";
 
-class MatchCard extends React.Component {
+class MatchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -184,4 +184,4 @@ class MatchCard extends React.Component {
   }
 }
 
-export default MatchCard;
+export default MatchForm;
