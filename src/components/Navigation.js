@@ -64,6 +64,14 @@ const Navigation = ({
         Standings
       </p>
       {button}
+      {isAdmin ? (
+        <p
+          onClick={() => onRouteChange("admin")}
+          className="f3 link dim white underline pa3 pointer"
+        >
+          Admin Panel
+        </p>
+      ) : null}
       {isSignedIn ? (
         <p
           onClick={() =>

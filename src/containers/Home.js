@@ -1,13 +1,14 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const Home = () => {
   return (
     <div style={{ flex: 1 }}>
-      <h1>Welcome to FifaResults</h1>
+      <Typography variant="h3">Welcome to FifaResults</Typography>
       <br />
-      By IGVDev
+      <Typography variant="h5">By IGVDev</Typography>
       <br />
-      BOKITA PAPÁ
+      <Typography variant="p">BOKITA PAPÁ</Typography>
     </div>
   );
 };

@@ -10,6 +10,8 @@ import MatchUpload from "./containers/MatchUpload";
 import StandingsScreen from "./containers/StandingsScreen";
 import AdminSignIn from "./components/AdminSignIn";
 import MatchView from "./containers/MatchView";
+import AdminPanel from "./containers/AdminPanel";
+import { Container, Fab } from "@mui/material";
 
 const App = () => {
   const { loginWithPopup, logout, isAuthenticated, user } = useAuth0();
@@ -55,6 +57,9 @@ const App = () => {
     case "standings":
       component = <StandingsScreen />;
       break;
+    case "admin":
+      component = <AdminPanel />;
+      break;
     default: {
     }
   }
@@ -71,7 +76,7 @@ const App = () => {
         loadUser={loadUser}
         name={name}
       />
-      <div className="flex">
+      <Container style={{ backgroundColor: "red" }}>
         <AdminSignIn
           isOpen={isOpen}
           isLoading={isLoading}
@@ -82,7 +87,7 @@ const App = () => {
           setIsOpen={setIsOpen}
         />
         {component}
-      </div>
+      </Container>
     </div>
   );
 };
