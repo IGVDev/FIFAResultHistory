@@ -8,7 +8,13 @@ const Standings = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [database, setDatabase] = useState("");
-  const databaseOptions = ["test", "mmpdobles", "mmpfutboltenis", "mmp2021"];
+  const databaseOptions = [
+    "test",
+    "mmpdobles",
+    "mmpfutboltenis",
+    "mmp2021",
+    "mmp2022",
+  ];
 
   useEffect(() => {
     setIsLoading(true);
