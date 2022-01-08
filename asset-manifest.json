@@ -1,23 +1,13 @@
 {
   "files": {
-    "main.css": "/FIFAResultHistory/static/css/main.125f824b.chunk.css",
-    "main.js": "/FIFAResultHistory/static/js/main.7a8252cb.chunk.js",
-    "main.js.map": "/FIFAResultHistory/static/js/main.7a8252cb.chunk.js.map",
-    "runtime-main.js": "/FIFAResultHistory/static/js/runtime-main.bcd40fd5.js",
-    "runtime-main.js.map": "/FIFAResultHistory/static/js/runtime-main.bcd40fd5.js.map",
-    "static/css/2.883f1b68.chunk.css": "/FIFAResultHistory/static/css/2.883f1b68.chunk.css",
-    "static/js/2.e87cc7fb.chunk.js": "/FIFAResultHistory/static/js/2.e87cc7fb.chunk.js",
-    "static/js/2.e87cc7fb.chunk.js.map": "/FIFAResultHistory/static/js/2.e87cc7fb.chunk.js.map",
+    "main.css": "/FIFAResultHistory/static/css/main.eded4fd9.css",
+    "main.js": "/FIFAResultHistory/static/js/main.480da9a4.js",
     "index.html": "/FIFAResultHistory/index.html",
-    "static/css/2.883f1b68.chunk.css.map": "/FIFAResultHistory/static/css/2.883f1b68.chunk.css.map",
-    "static/css/main.125f824b.chunk.css.map": "/FIFAResultHistory/static/css/main.125f824b.chunk.css.map",
-    "static/js/2.e87cc7fb.chunk.js.LICENSE.txt": "/FIFAResultHistory/static/js/2.e87cc7fb.chunk.js.LICENSE.txt"
+    "main.eded4fd9.css.map": "/FIFAResultHistory/static/css/main.eded4fd9.css.map",
+    "main.480da9a4.js.map": "/FIFAResultHistory/static/js/main.480da9a4.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.bcd40fd5.js",
-    "static/css/2.883f1b68.chunk.css",
-    "static/js/2.e87cc7fb.chunk.js",
-    "static/css/main.125f824b.chunk.css",
-    "static/js/main.7a8252cb.chunk.js"
+    "static/css/main.eded4fd9.css",
+    "static/js/main.480da9a4.js"
   ]
 }
