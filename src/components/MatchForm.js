@@ -6,7 +6,7 @@ class MatchForm extends React.Component {
     super(props);
     this.state = {
       database: "test",
-      leagueOptions: ["test", "mmpdobles", "mmpfutboltenis", "mmp2021"],
+      leagueOptions: ["mmpfutboltenis", "mmp2022", "mmpdobles2022"],
       users: [],
       hteam: "",
       ateam: "",
