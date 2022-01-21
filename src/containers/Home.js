@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, Link } from "@mui/material";
 import React from "react";
 
 const Home = () => {
@@ -6,7 +6,9 @@ const Home = () => {
     <div style={{ flex: 1 }}>
       <Typography variant="h3">Welcome to FifaResults</Typography>
       <br />
-      <Typography variant="h5">By IGVDev</Typography>
+      <Link style={{ color: "white" }} href="https://github.com/IGVDev">
+        <Typography variant="h5">By IGVDev</Typography>
+      </Link>
       <br />
       <Typography variant="p">BOKITA PAPÁ</Typography>
     </div>
