@@ -76,7 +76,7 @@ const App = () => {
         loadUser={loadUser}
         name={name}
       />
-      <Container style={{ backgroundColor: "red" }}>
+      <Container>
         <AdminSignIn
           isOpen={isOpen}
           isLoading={isLoading}

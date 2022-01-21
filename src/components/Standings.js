@@ -9,10 +9,9 @@ const Standings = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [database, setDatabase] = useState("");
   const databaseOptions = [
-    "test",
     "mmpdobles",
     "mmpfutboltenis",
-    "mmp2021",
+    "mmp2022",
     "mmpdobles2022",
   ];
 

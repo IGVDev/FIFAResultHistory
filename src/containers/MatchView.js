@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import WaveLoading from "react-loadingg/lib/WaveLoading";
 
-const MatchView = (name) => {
+const MatchView = (user) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({});
+  console.log(user);
   let columns = [
     {
       name: "League",
@@ -50,13 +51,13 @@ const MatchView = (name) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://matchhistoryapi.herokuapp.com/getMatchesByUser/Laucha`)
+    fetch(`https://matchhistoryapi.herokuapp.com/getMatchesByUser/${user.name}`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);
         setIsLoading(false);
       });
-  }, [name]);
+  }, [user.name]);
 
   return (
     <div style={{ flex: 1 }}>
