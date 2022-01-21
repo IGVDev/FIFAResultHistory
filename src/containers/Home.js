@@ -9,8 +9,6 @@ const Home = () => {
       <Link style={{ color: "white" }} href="https://github.com/IGVDev">
         <Typography variant="h5">By IGVDev</Typography>
       </Link>
-      <br />
-      <Typography variant="p">BOKITA PAPÁ</Typography>
     </div>
   );
 };
