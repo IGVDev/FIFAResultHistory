@@ -5,7 +5,7 @@ import WaveLoading from "react-loadingg/lib/WaveLoading";
 const MatchView = (user) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({});
-  console.log(user);
+  const [query, setQuery] = useState(user.name);
   let columns = [
     {
       name: "League",
@@ -51,16 +51,23 @@ const MatchView = (user) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://matchhistoryapi.herokuapp.com/getMatchesByUser/${user.name}`)
+    if (!query) return;
+    fetch(`https://matchhistoryapi.herokuapp.com/getMatchesByUser/${query}`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);
         setIsLoading(false);
       });
-  }, [user.name]);
+  }, [query]);
 
   return (
     <div style={{ flex: 1 }}>
+      <input
+        type="text"
+        defaultValue={user.name}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      ></input>
       <DataTable
         progressPending={isLoading}
         progressComponent={
