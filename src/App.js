@@ -26,6 +26,8 @@ const App = () => {
   // Commented email because it's not being used at the moment
   // const [email, setEmail] = useState("");
 
+  const API_URL = "https://matchhistoryapp.fly.dev/";
+
   const loadUser = (data) => {
     if (data) {
       setIsSignedIn(isAuthenticated);

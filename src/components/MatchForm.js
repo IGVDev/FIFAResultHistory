@@ -1,6 +1,7 @@
 import React from "react";
 import whoWon from "./Match";
 
+const API_URL = `https://matchhistoryapp.fly.dev`;
 class MatchForm extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +21,7 @@ class MatchForm extends React.Component {
   }
 
   componentDidMount = async () => {
-    await fetch(`https://matchhistoryapi.herokuapp.com/getUsers/test`)
+    await fetch(`${API_URL}/getUsers/test`)
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -31,9 +32,7 @@ class MatchForm extends React.Component {
   };
 
   onDatabaseChange = async (event) => {
-    await fetch(
-      `https://matchhistoryapi.herokuapp.com/getUsers/${event.target.value}`
-    )
+    await fetch(`${API_URL}/getUsers/${event.target.value}`)
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -56,7 +55,7 @@ class MatchForm extends React.Component {
       this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
-      fetch("https://matchhistoryapi.herokuapp.com/createMatch", {
+      fetch(`${API_URL}/createMatch`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -70,6 +69,7 @@ class MatchForm extends React.Component {
           league: database,
         }),
       }).catch((err) => console.log("oops"));
+      alert("Match loaded to database");
       this.setState = {
         hteam: "",
         ateam: "",
@@ -80,7 +80,6 @@ class MatchForm extends React.Component {
         winner: "",
         needConfirm: false,
       };
-      alert("Match loaded to database");
     }
   };
 
@@ -104,6 +103,7 @@ class MatchForm extends React.Component {
           <div>
             <p>Player Name</p>
             <input
+              value={this.state.hteam}
               type="text"
               id="hteam"
               onChange={this.onOptionChange}
@@ -120,12 +120,14 @@ class MatchForm extends React.Component {
             </select>
             <p>Team</p>
             <input
+              value={this.state.team1}
               type="text"
               id="team1"
               onChange={this.onOptionChange}
             ></input>
             <p>Score</p>
             <input
+              value={this.state.hscore}
               type="number"
               id="hscore"
               onChange={this.onOptionChange}
@@ -135,6 +137,7 @@ class MatchForm extends React.Component {
           <div>
             <p>Player Name</p>
             <input
+              value={this.state.ateam}
               type="text"
               id="ateam"
               onChange={this.onOptionChange}
@@ -151,12 +154,14 @@ class MatchForm extends React.Component {
             </select>
             <p>Team</p>
             <input
+              value={this.state.team2}
               type="text"
               id="team2"
               onChange={this.onOptionChange}
             ></input>
             <p>Score</p>
             <input
+              value={this.state.ascore}
               type="number"
               id="ascore"
               onChange={this.onOptionChange}

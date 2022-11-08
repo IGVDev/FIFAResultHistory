@@ -14,11 +14,12 @@ const AdminSignIn = ({
   setIsAdmin,
   setIsOpen,
 }) => {
+  const API_URL = `https://matchhistoryapp.fly.dev`;
   const onCloseModal = () => setIsOpen(false);
   const submitPassword = async () => {
     setIsLoading(true);
     const hashPassword = bcrypt.hashSync(pw, salt);
-    await fetch("https://matchhistoryapi.herokuapp.com/admin/login", {
+    await fetch(`${API_URL}/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
