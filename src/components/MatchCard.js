@@ -1,6 +1,7 @@
 import React from "react";
 import whoWon from "./Match";
 
+const API_URL = `https://matchhistoryapp.fly.dev`;
 class MatchCard extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +21,7 @@ class MatchCard extends React.Component {
   }
 
   componentDidMount = async () => {
-    await fetch(`https://matchhistoryapi.herokuapp.com/getUsers/test`)
+    await fetch(`${API_URL}/getUsers/test`)
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -31,9 +32,7 @@ class MatchCard extends React.Component {
   };
 
   onDatabaseChange = async (event) => {
-    await fetch(
-      `https://matchhistoryapi.herokuapp.com/getUsers/${event.target.value}`
-    )
+    await fetch(`${API_URL}/getUsers/${event.target.value}`)
       .then((data) => data.json())
       .then((array) => {
         if (Array.isArray(array)) {
@@ -56,7 +55,7 @@ class MatchCard extends React.Component {
       this.state;
     if (!hteam || !ateam || !team1 || !team2 || !winner) alert("Missing data");
     else {
-      fetch("https://matchhistoryapi.herokuapp.com/createMatch", {
+      fetch(`${API_URL}/createMatch`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -5,6 +5,7 @@ import { WaveLoading } from "react-loadingg";
 // import axios from "axios";
 
 const Standings = () => {
+  const API_URL = `https://matchhistoryapp.fly.dev`;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [database, setDatabase] = useState("");
@@ -19,7 +20,7 @@ const Standings = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://matchhistoryapi.herokuapp.com/getStandings/${database}`)
+    fetch(`${API_URL}getStandings/${database}`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);

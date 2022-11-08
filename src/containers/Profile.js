@@ -6,10 +6,11 @@ const MatchView = (user) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({});
   let columns = [];
+  const API_URL = `https://matchhistoryapp.fly.dev`;
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://matchhistoryapi.herokuapp.com/getMatches/`)
+    fetch(`${API_URL}/getMatches/`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);

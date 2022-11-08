@@ -14,6 +14,8 @@ import MatchView from "./containers/Profile";
 
 const salt = bcrypt.genSaltSync(10);
 
+const API_URL = `https://matchhistoryapp.fly.dev`;
+
 const initState = {
   matches: [],
   route: "home",
@@ -77,7 +79,7 @@ const App = () => {
   const submitPassword = async () => {
     setIsLoading(true);
     const hashPassword = bcrypt.hashSync(pw, salt);
-    await fetch("https://matchhistoryapi.herokuapp.com/admin/login", {
+    await fetch(`${API_URL}/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
