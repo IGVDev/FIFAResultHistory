@@ -20,7 +20,7 @@ const Standings = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${API_URL}getStandings/${database}`)
+    fetch(`${API_URL}/getStandings/${database}`)
       .then((data) => data.json())
       .then((data) => {
         setData(data);
