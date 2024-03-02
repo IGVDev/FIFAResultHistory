@@ -2,6 +2,8 @@
 
 https://igvdev.github.io/FIFAResultHistory/
 
+## This repo is now deprecated. 
+
 This is a SPA that aims to keep logs of matches played between friends on FIFA, or PES, or whichever is the hip soccer videogame that the cool kids play whenever you are reading this.
 
 The inspiration for this app is the "community" system that older PES games used, where games played locally would have their stats saved to a database so you could see when, and how much you beat your friends, for the sole purpose of bragging rights.
